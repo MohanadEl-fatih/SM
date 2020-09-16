@@ -16,7 +16,7 @@ namespace SM.Bus.RabbitMQ
             throw new NotImplementedException();
         }
 
-        Task ICommandDispatcher.Send<TCommand>(TCommand command)
+        public Task Send<TCommand>(TCommand command) where TCommand : class, ICommand
         {
             throw new NotImplementedException();
         }

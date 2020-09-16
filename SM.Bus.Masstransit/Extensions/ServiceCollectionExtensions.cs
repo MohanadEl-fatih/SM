@@ -11,27 +11,28 @@ namespace SM.Bus.Masstransit.Extensions
 {
     public static class ServiceCollectionExtensions
     {
-        //public static ISMBuilder AddMasstransit(this ISMBuilder builder, Action<MasstransitOptions> configureOptions)
-        //{
-        //    if (builder == null)
-        //    {
+        public static ISMBuilder AddMasstransit(this ISMBuilder builder, Action<MasstransitOptions> configureOptions)
+        {
+            if (builder == null)
+            {
 
-        //    }
+            }
 
-        //    if (configureOptions == null)
-        //    {
+            if (configureOptions == null)
+            {
 
-        //    }
+            }
 
-        //    builder.Services.Configure(configureOptions);
-        //    var sp = builder.Services.BuildServiceProvider();
-        //    var options = sp.GetService<IOptions<MasstransitOptions>>().Value;
+            builder.Services.Configure(configureOptions);
+            var sp = builder.Services.BuildServiceProvider();
+            var options = sp.GetService<IOptions<MasstransitOptions>>().Value;
 
-        //    builder.Services.AddMassTransit(x =>
-        //    {
-        //        x.UsingRabbitMq();
-        //    });
+            builder.Services.AddMassTransit(x =>
+            {
+                x.UsingRabbitMq();
+            });
 
-        //}
+            return builder;
+        }
     }
 }
