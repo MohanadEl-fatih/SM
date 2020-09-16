@@ -4,7 +4,7 @@ using System.Threading.Tasks;
 
 namespace SM.Bus.RabbitMQ
 {
-    public class ServiceBusProvider : IEventListener, ICommandDispatcher
+    public class ServiceBusProvider : IBusProvider, ICommandDispatcher
     {
         public Task Publish<TEvent>(TEvent @event) where TEvent : IEvent
         {

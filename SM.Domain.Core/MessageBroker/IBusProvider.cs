@@ -5,7 +5,7 @@ using System.Threading.Tasks;
 
 namespace SM.Core
 {
-    public interface IEventListener
+    public interface IBusProvider
     {
         void Subscribe<TEvent>() where TEvent : IEvent;
         Task Publish<TEvent>(TEvent @event) where TEvent : IEvent;
