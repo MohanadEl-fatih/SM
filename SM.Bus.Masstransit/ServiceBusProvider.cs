@@ -5,7 +5,7 @@ using System.Threading.Tasks;
 
 namespace SM.Bus.Masstransit
 {
-    public class ServiceBusProvider : IEventListener, ICommandDispatcher
+    public class ServiceBusProvider : IBusProvider, ICommandDispatcher
     {
 
         private readonly IBusControl _busControl;
@@ -17,7 +17,7 @@ namespace SM.Bus.Masstransit
 
         public async Task Publish<TMessage>(TMessage message) where TMessage : IEvent
         {
-            await _busControl.Publish<IEventListener>(message);
+            await _busControl.Publish<IBusProvider>(message);
         }
 
         public void Subscribe<TEvent>() where TEvent : IEvent

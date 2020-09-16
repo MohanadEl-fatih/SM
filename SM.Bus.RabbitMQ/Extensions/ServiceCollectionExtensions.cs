@@ -25,7 +25,7 @@ namespace SM.Bus.RabbitMQ.Extensions
             builder.Services.Configure(configureOptions);
 
             builder.Services
-                   .AddTransient<IEventListener, ServiceBusProvider>();
+                   .AddTransient<IBusProvider, ServiceBusProvider>();
 
             return builder;
         }
