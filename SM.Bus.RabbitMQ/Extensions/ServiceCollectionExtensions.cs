@@ -1,6 +1,7 @@
 ﻿using Microsoft.Extensions.DependencyInjection;
 using SM.Bus.RabbitMQ.Configuration;
 using SM.Core;
+using SM.Core.Bus;
 using SM.Domain.Core.Extensions;
 using System;
 using System.Collections.Generic;

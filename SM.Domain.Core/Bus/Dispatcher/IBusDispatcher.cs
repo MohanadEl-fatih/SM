@@ -3,11 +3,10 @@ using System.Collections.Generic;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace SM.Core
+namespace SM.Core.Bus.Dispatcher
 {
-    public interface IBusProvider
+    public interface IBusDispatcher
     {
-        void Subscribe<TEvent>() where TEvent : IEvent;
         Task Publish<TEvent>(TEvent @event) where TEvent : IEvent;
     }
 }

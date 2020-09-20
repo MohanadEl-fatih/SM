@@ -28,10 +28,10 @@ namespace SM.Core.Dispatcher
             await _commandDispatcher.Send<TCommand>(command);
         }
 
-        public async Task Publish<T>(T @event) where T : class, IEvent
+        public async Task Publish<TEvent>(TEvent @event) where TEvent : class, IEvent
         {
             //we need a way to know if event is in mem or bus event
-            await _eventDispatcher.Publish<T>(@event);
+            await _eventDispatcher.Publish<TEvent>(@event);
         }
 
         public async Task<TResult> Query<TResult>(IQuery<TResult> query)
@@ -43,7 +43,5 @@ namespace SM.Core.Dispatcher
         {
             return await _queryDispatcher.Query<TQuery, TResult>(query);
         }
-
-
     }
 }

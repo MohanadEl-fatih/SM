@@ -1,5 +1,6 @@
 ﻿using MassTransit;
 using SM.Core;
+using SM.Core.Bus;
 using System;
 using System.Threading.Tasks;
 
