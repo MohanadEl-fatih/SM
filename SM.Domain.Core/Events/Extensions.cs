@@ -20,7 +20,7 @@ namespace SM.Core.Events
             return builder;
         }
 
-        public static ISMBuilder AddCommandDispatcher(this ISMBuilder builder)
+        public static ISMBuilder AddEventDispatcher(this ISMBuilder builder)
         {
             builder.Services.AddSingleton<IEventDispatcher, EventDispatcher>();
             builder.Services.AddSingleton<IBusDispatcher, BusDispatcher>();
