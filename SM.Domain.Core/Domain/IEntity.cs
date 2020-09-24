@@ -4,8 +4,13 @@ using System.Text;
 
 namespace SM.Domain.Core.Domain
 {
-    public interface IEntity
+    /// <summary>
+    /// used when entity has a one key
+    /// </summary>
+    /// <typeparam name="T"></typeparam>
+    public interface IEntity<T>
     {
-        Guid Id { get; }
+        T Id { get; }
     }
+
 }
