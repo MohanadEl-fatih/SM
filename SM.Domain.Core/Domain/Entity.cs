@@ -4,21 +4,21 @@ using System.Text;
 
 namespace SM.Domain.Core.Domain
 {
-    public abstract class Entity : IEntity
+    public abstract class Entity<T> : IEntity<T>
     {
-        public Guid Id { get; protected set; }
+        public T Id { get; protected set; }
 
         protected Entity()
-        {
-            Id = Guid.NewGuid();
+        { 
         }
 
-        protected Entity(Guid id)
-        {
-            if (id == Guid.Empty)
-                id = Guid.NewGuid();
-
+        protected Entity(T id)
+        { 
             Id = id;
+        }
+        public override string ToString()
+        {
+            return $"[{GetType().Name}] Id = {Id}";
         }
     }
 }
