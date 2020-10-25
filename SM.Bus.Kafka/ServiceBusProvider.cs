@@ -28,22 +28,24 @@ namespace SM.Bus.Kafka
         public void Subscribe<TEvent>() where TEvent : class, IEvent
         {
             Subscribe(typeof(TEvent));
-        }
 
-        public void Subscribe(Type type)
-        {
-            using (var consumer = new ConsumerBuilder<string, string>(_options.Consumer).Build())
+            void Subscribe(Type type)
             {
-                consumer.Subscribe(_topics);
-                while (true)
+                using (var consumer = new ConsumerBuilder<string, string>(_options.Consumer).Build())
                 {
-                    var message = consumer.Consume();
+                    consumer.Subscribe(_topics);
+                    while (true)
+                    {
+                        var message = consumer.Consume();
 
-                    var @event = JsonConvert.DeserializeObject(message.Message.Value, type) as IEvent;
-                    _eventDispatcher.Publish(@event);
+                        var @event = JsonConvert.DeserializeObject(message.Message.Value, type) as IEvent;
+                        _eventDispatcher.Publish(@event);
+                    }
                 }
             }
         }
+
+     
 
         public async Task Publish<TEvent>(TEvent @event) where TEvent : IEvent
         {

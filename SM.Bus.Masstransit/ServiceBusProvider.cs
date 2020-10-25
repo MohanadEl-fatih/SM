@@ -31,9 +31,6 @@ namespace SM.Bus.Masstransit
             throw new NotImplementedException();
         }
 
-        public void Subscribe(Type type)
-        {
-            throw new NotImplementedException();
-        }
+       
     }
 }

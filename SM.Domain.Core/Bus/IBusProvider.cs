@@ -7,7 +7,7 @@ namespace SM.Core.Bus
 {
     public interface IBusProvider
     {
-        void Subscribe(Type type);
+        
         void Subscribe<TEvent>() where TEvent : class, IEvent;
         Task Publish<TEvent>(TEvent @event) where TEvent : IEvent;
     }
