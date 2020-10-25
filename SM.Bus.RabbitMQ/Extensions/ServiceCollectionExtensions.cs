@@ -5,6 +5,7 @@ using RawRabbit.Instantiation;
 using SM.Bus.RabbitMQ.RawRabbit.Configuration;
 using SM.Core;
 using SM.Core.Bus;
+using SM.Core.Events;
 using SM.Domain.Core.Extensions;
 using System;
 using System.Collections.Generic;
@@ -35,8 +36,8 @@ namespace SM.Bus.RabbitMQ.RawRabbit.Extensions
                 ClientConfiguration = options
             });
 
-            builder.Services
-                   .AddTransient<IBusProvider, ServiceBusProvider>();
+            builder.Services.AddTransient<IBusProvider, ServiceBusProvider>();
+            builder.Services.AddSingleton<IEventDispatcher, EventDispatcher>();
 
             return builder;
         }

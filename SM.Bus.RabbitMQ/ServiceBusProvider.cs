@@ -61,8 +61,12 @@ namespace SM.Bus.RabbitMQ
             );
         }
 
-
         public Task Send<TCommand>(TCommand command) where TCommand : class, ICommand
+        {
+            throw new NotImplementedException();
+        }
+
+        public void Subscribe(Type type)
         {
             throw new NotImplementedException();
         }

@@ -13,6 +13,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SM.Bus.Masstransit", "SM.Bu
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SM.Bus.RabbitMQ.RawRabbit", "SM.Bus.RabbitMQ\SM.Bus.RabbitMQ.RawRabbit.csproj", "{DA157B8D-BDFF-4F5D-A7F8-F262FEF8DA37}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SM.Bus.Kafka", "SM.Bus.Kafka\SM.Bus.Kafka.csproj", "{0B7C9594-BCCD-4F1F-A1FD-D32B02DD84FA}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -31,6 +33,10 @@ Global
 		{DA157B8D-BDFF-4F5D-A7F8-F262FEF8DA37}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{DA157B8D-BDFF-4F5D-A7F8-F262FEF8DA37}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{DA157B8D-BDFF-4F5D-A7F8-F262FEF8DA37}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0B7C9594-BCCD-4F1F-A1FD-D32B02DD84FA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0B7C9594-BCCD-4F1F-A1FD-D32B02DD84FA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0B7C9594-BCCD-4F1F-A1FD-D32B02DD84FA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0B7C9594-BCCD-4F1F-A1FD-D32B02DD84FA}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -39,6 +45,7 @@ Global
 		{B5626A3A-34F9-4B75-94CC-1E5CFCB7AF0C} = {51BDBAD1-9CD3-495D-843F-5ACCDAD08106}
 		{C3D0F054-A912-439A-A13F-B154B9341FA2} = {DB94CD1D-84DB-4029-A9E7-3274F91BE965}
 		{DA157B8D-BDFF-4F5D-A7F8-F262FEF8DA37} = {DB94CD1D-84DB-4029-A9E7-3274F91BE965}
+		{0B7C9594-BCCD-4F1F-A1FD-D32B02DD84FA} = {DB94CD1D-84DB-4029-A9E7-3274F91BE965}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {BADFA003-57C5-48FB-BA55-DB65DD7E31EC}

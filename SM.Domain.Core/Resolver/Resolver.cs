@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using Microsoft.Extensions.DependencyInjection;
 
-namespace SM.Core.Resolver
+namespace SM.Core
 {
     public class Resolver : IResolver
     {
