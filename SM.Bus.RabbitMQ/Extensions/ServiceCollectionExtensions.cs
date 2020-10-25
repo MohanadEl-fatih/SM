@@ -1,5 +1,8 @@
 ﻿using Microsoft.Extensions.DependencyInjection;
-using SM.Bus.RabbitMQ.Configuration;
+using Microsoft.Extensions.Options;
+using RawRabbit.DependencyInjection.ServiceCollection;
+using RawRabbit.Instantiation;
+using SM.Bus.RabbitMQ.RawRabbit.Configuration;
 using SM.Core;
 using SM.Core.Bus;
 using SM.Domain.Core.Extensions;
@@ -7,11 +10,11 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace SM.Bus.RabbitMQ.Extensions
+namespace SM.Bus.RabbitMQ.RawRabbit.Extensions
 {
     public static class ServiceCollectionExtensions
     {
-        public static ISMBuilder AddMasstransit(this ISMBuilder builder, Action<RabbitMQOptions> configureOptions)
+        public static ISMBuilder AddRabbitMQ(this ISMBuilder builder, Action<RabbitMQOptions> configureOptions)
         {
             if (builder == null)
             {
@@ -24,6 +27,13 @@ namespace SM.Bus.RabbitMQ.Extensions
             }
 
             builder.Services.Configure(configureOptions);
+            var sp = builder.Services.BuildServiceProvider();
+            var options = sp.GetService<IOptions<RabbitMQOptions>>().Value;
+
+            builder.Services.AddRawRabbit(new RawRabbitOptions
+            {
+                ClientConfiguration = options
+            });
 
             builder.Services
                    .AddTransient<IBusProvider, ServiceBusProvider>();

@@ -21,7 +21,7 @@ namespace SM.Bus.Masstransit
             await _busControl.Publish<IBusProvider>(message);
         }
 
-        public void Subscribe<TEvent>() where TEvent : IEvent
+        public void Subscribe<TEvent>() where TEvent : class, IEvent
         {
             throw new NotImplementedException();
         }

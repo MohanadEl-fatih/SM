@@ -11,7 +11,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Infrastructure", "Infrastru
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SM.Bus.Masstransit", "SM.Bus.Masstransit\SM.Bus.Masstransit.csproj", "{C3D0F054-A912-439A-A13F-B154B9341FA2}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SM.Bus.RabbitMQ", "SM.Bus.RabbitMQ\SM.Bus.RabbitMQ.csproj", "{DA157B8D-BDFF-4F5D-A7F8-F262FEF8DA37}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SM.Bus.RabbitMQ.RawRabbit", "SM.Bus.RabbitMQ\SM.Bus.RabbitMQ.RawRabbit.csproj", "{DA157B8D-BDFF-4F5D-A7F8-F262FEF8DA37}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
