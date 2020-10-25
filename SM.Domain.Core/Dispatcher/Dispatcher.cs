@@ -30,7 +30,7 @@ namespace SM.Core.Dispatcher
 
         public async Task Publish<TEvent>(TEvent @event) where TEvent : class, IEvent
         {
-            //we need a way to know if event is in mem or bus event
+            //we need a way to distinguish if event is in mem or bus event
             await _eventDispatcher.Publish<TEvent>(@event);
         }
 

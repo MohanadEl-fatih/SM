@@ -45,8 +45,6 @@ namespace SM.Bus.Kafka
             }
         }
 
-     
-
         public async Task Publish<TEvent>(TEvent @event) where TEvent : IEvent
         {
             using (var p = new ProducerBuilder<string, string>(_options.Producer).Build())
